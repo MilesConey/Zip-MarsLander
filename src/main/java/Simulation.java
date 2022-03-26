@@ -51,6 +51,7 @@ public class Simulation {
     public int runSimulation(BurnStream burnSource) {
         DescentEvent status = null;
         int burnInterval = 0;
+
         printString(gameHeader());
         printString(getHeader());
         while (vehicle.stillFlying()) {
@@ -73,6 +74,11 @@ public class Simulation {
     }
 
     public static void main(String[] args) {
+
+        Vehicle v = new Vehicle(randomaltitude());
+        Simulation simulation = new Simulation(new Vehicle(randomaltitude()));
+        BurnInputStream burnInputStream = new BurnInputStream();
+        simulation.runSimulation(burnInputStream);
         // create a new Simulation object with a random starting altitude
         // create a new BurnInputStream
         // pass the new BurnInputStream to the runSimulation method
